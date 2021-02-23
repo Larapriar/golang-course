@@ -49,7 +49,8 @@ func main() {
 			zipCode: 33430,
 		},
 	}
-	fmt.Printf("%+v", jim)
+	jim.updateName("Jimmy")
+	jim.print()
 
 	Miumiu := secondPerson{
 		firstName: "Jim",
@@ -61,4 +62,12 @@ func main() {
 	}
 	fmt.Printf("%+v", Miumiu)
 
+}
+
+func (p person) print() {
+	fmt.Printf("%+v", p)
+}
+
+func (p person) updateName(newFirstName string) {
+	p.firstName = newFirstName
 }
