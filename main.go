@@ -2,15 +2,22 @@ package main
 
 import "fmt"
 
+type contactInfo struct {
+	email   string
+	zipCode int
+}
+
 type person struct {
 	firstName string
 	lastName  string
+	contact   contactInfo
 }
 
 func main() {
 
 	//first way
-	alex := person{"Alex", "Anderson"}
+	alexInfo := contactInfo{"alex.anderson@email.com", 33430}
+	alex := person{"Alex", "Anderson", alexInfo}
 	fmt.Println(alex.firstName)
 
 	//second way
@@ -25,5 +32,16 @@ func main() {
 	unai.firstName = "Unai"
 	unai.lastName = "Aanders"
 	fmt.Println(unai)
+
+	//embebing structs in structs
+	jim := person{
+		firstName: "Jim",
+		lastName:  "Party",
+		contact: contactInfo{
+			email:   "jim.party@email.com",
+			zipCode: 33430,
+		},
+	}
+	fmt.Printf("%+v", jim)
 
 }
