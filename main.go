@@ -13,6 +13,13 @@ type person struct {
 	contact   contactInfo
 }
 
+//second way of embebing structs
+type secondPerson struct {
+	firstName string
+	lastName  string
+	contactInfo
+}
+
 func main() {
 
 	//first way
@@ -43,5 +50,15 @@ func main() {
 		},
 	}
 	fmt.Printf("%+v", jim)
+
+	Miumiu := secondPerson{
+		firstName: "Jim",
+		lastName:  "Party",
+		contactInfo: contactInfo{
+			email:   "jim.party@email.com",
+			zipCode: 33430,
+		},
+	}
+	fmt.Printf("%+v", Miumiu)
 
 }
