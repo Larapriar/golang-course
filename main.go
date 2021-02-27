@@ -11,26 +11,36 @@ func main() {
 	}
 	fmt.Println(colors)
 
-	//second way of declaring a map
-	var secondColors map[string]string
-	fmt.Println(secondColors)
+	/*
 
-	//Third way
-	colorsThree := make(map[string]string)
-	fmt.Println(colorsThree)
+		//second way of declaring a map
+		var secondColors map[string]string
+		fmt.Println(secondColors)
 
-	//Add values
-	colors["white"] = "#ffffff"
+		//Third way
+		colorsThree := make(map[string]string)
+		fmt.Println(colorsThree)
 
-	secondColors = map[string]string{}
-	secondColors["white"] = "#ffffff"
-	colorsThree["white"] = "#ffffff"
-	fmt.Println(colors)
-	fmt.Println(secondColors)
-	fmt.Println(colorsThree)
+		//Add values
+		colors["white"] = "#ffffff"
 
-	//delete keys and values
-	delete(colors, "white")
-	fmt.Println(colors)
+		secondColors = map[string]string{}
+		secondColors["white"] = "#ffffff"
+		colorsThree["white"] = "#ffffff"
+		fmt.Println(colors)
+		fmt.Println(secondColors)
+		fmt.Println(colorsThree)
 
+		//delete keys and values
+		delete(colors, "white")
+		fmt.Println(colors)
+	*/
+	printMap(colors)
+
+}
+
+func printMap(c map[string]string) {
+	for color, hex := range c {
+		fmt.Println("Hex code for", color, "is", hex)
+	}
 }
