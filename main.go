@@ -49,7 +49,9 @@ func main() {
 			zipCode: 33430,
 		},
 	}
-	jim.updateName("Jimmy")
+	jimPointer := &jim
+	fmt.Println(jimPointer)
+	jimPointer.updateName("Jimmy")
 	jim.print()
 
 	Miumiu := secondPerson{
@@ -68,6 +70,7 @@ func (p person) print() {
 	fmt.Printf("%+v", p)
 }
 
-func (p person) updateName(newFirstName string) {
-	p.firstName = newFirstName
+//receiver as pointer and not value
+func (pointerToPerson *person) updateName(newFirstName string) {
+	(*pointerToPerson).firstName = newFirstName
 }
