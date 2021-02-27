@@ -29,4 +29,8 @@ func main() {
 	fmt.Println(secondColors)
 	fmt.Println(colorsThree)
 
+	//delete keys and values
+	delete(colors, "white")
+	fmt.Println(colors)
+
 }
