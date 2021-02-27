@@ -49,9 +49,15 @@ func main() {
 			zipCode: 33430,
 		},
 	}
+
+	// First way of doing pointers
 	jimPointer := &jim
 	fmt.Println(jimPointer)
-	jimPointer.updateName("Jimmy")
+	jimPointer.updateNameLongVersion("Jimmy")
+	jim.print()
+
+	// Second way of doing pointers
+	jim.updateNameShortVersion("George")
 	jim.print()
 
 	Miumiu := secondPerson{
@@ -71,6 +77,10 @@ func (p person) print() {
 }
 
 //receiver as pointer and not value
-func (pointerToPerson *person) updateName(newFirstName string) {
-	(*pointerToPerson).firstName = newFirstName
+func (p *person) updateNameLongVersion(newFirstName string) {
+	(*p).firstName = newFirstName
+}
+
+func (p *person) updateNameShortVersion(newFirstName string) {
+	(*p).firstName = newFirstName
 }
